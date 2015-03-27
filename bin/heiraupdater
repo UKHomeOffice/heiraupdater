@@ -9,11 +9,11 @@ class App
   include Methadone::Main
   include Methadone::CLILogging
 
-  main do |yamlfile,value,key,subkey|
+  main do |yamlfile,key,value,subkey|
     puts yamlfile
     heira = YAML.load_file(yamlfile)
     puts heira
-    if subkey != ""
+    if subkey != nil
       heira[key][subkey] = value
     else
       heira[key] = value
