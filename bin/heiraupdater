@@ -2,16 +2,25 @@
 
 require 'optparse'
 require 'methadone'
-require 'heiraupdater.rb'
+#require 'heiraupdater.rb'
+require 'yaml'
 
 class App
   include Methadone::Main
   include Methadone::CLILogging
 
-  main do # Add args you want: |like,so|
-    # your program code here
-    # You can access CLI options via
-    # the options Hash
+  main do |yamlfile,value,key,subkey|
+    puts yamlfile
+    heira = YAML.load_file(yamlfile)
+    puts heira
+    if subkey != ""
+      heira[key][subkey] = value
+    else
+      heira[key] = value
+    end    
+    File.open(yamlfile, 'w') do |out|
+      YAML.dump(heira, out)
+    end
   end
 
   # supplemental methods here
@@ -35,7 +44,11 @@ class App
   # # Make an argument optional
   # arg :optional_arg, :optional
 
-  version Heiraupdater::VERSION
+  arg :yamlfile
+  arg :key
+  arg :value
+  arg :subkey, :optional
+#  version Heiraupdater::VERSION
 
   use_log_level_option :toggle_debug_on_signal => 'USR1'
 
