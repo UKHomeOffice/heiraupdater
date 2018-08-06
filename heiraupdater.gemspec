@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Noel Sharpe"]
   spec.email         = ["noels@users.noreply.github.com"]
   spec.summary       = %q{Updates hiera puppet variables stored in yaml file.}
-  spec.description   = %q{}
+  spec.description   = ""
   spec.homepage      = ""
   spec.license       = ""
 
@@ -19,9 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", ">= 0.0"
+  spec.add_development_dependency "rake", ">= 0"
   spec.add_development_dependency('rdoc', "5.1.0")
   spec.add_development_dependency('aruba')
-  spec.add_development_dependency('rake')
   spec.add_dependency('methadone', '~> 1.8.0')
 end
