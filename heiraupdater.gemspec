@@ -6,10 +6,10 @@ require 'heiraupdater/version'
 Gem::Specification.new do |spec|
   spec.name          = "heiraupdater"
   spec.version       = Heiraupdater::VERSION
-  spec.authors       = ["TODO: Write your name"]
-  spec.email         = ["scarby@users.noreply.github.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.authors       = ["Noel Sharpe"]
+  spec.email         = ["noels@users.noreply.github.com"]
+  spec.summary       = %q{Updates hiera puppet variables stored in yaml file.}
+  spec.description   = %q{}
   spec.homepage      = ""
   spec.license       = ""
 
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.7"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "rake", ">= 0.0"
   spec.add_development_dependency('rdoc', "5.1.0")
   spec.add_development_dependency('aruba')
   spec.add_development_dependency('rake')
